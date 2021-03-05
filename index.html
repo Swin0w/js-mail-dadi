@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Biglietto treno</title>
+    <style media="screen">
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      #black {
+        background-color: #000;
+        height: 100vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 20%;
+        font-size: 15pt;
+        color: yellow;
+      }
+      #result {
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="black">
+      <p id="paragraph">
+      1 - Chiedi all'utente la sua email, controlla che sia nella lista di chi pu&oacute; accedere, stampa un messaggio appropriato
+      <hr>
+      2 - Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.<br> Stabilire il vincitore, in base a chi fa il punteggio pi&uacute; alto.</p>
+      <span id="result"></span>
+    </div>
+    <script type="text/javascript">
+
+    //Esercizio 1
+    var list = ["mia.email@look.it", "ciaociao@look.it", "azock@gmail.com", "marzolla.istruzione@gmail.com"];
+    var mail = prompt("Dammi la tua mail:");
+
+    console.log("Esercizio 1");
+
+    for (var i=0; i < list.length; i++) {
+      if (mail == list[i]) {
+        console.log("Ho trovato la tua mail");
+      } else {
+        console.log("Non ho trovato la tua mail");
+      }
+    }
+    //Esercizio 2
+    console.log("Esercizio 2");
+    var dadip = Math.floor(Math.random() * 6) + 1;
+    var dadicpu = Math.floor(Math.random() * 6) + 1;
+
+    console.log("Dadi giocatore:", dadip);
+    console.log("Dadi CPU:", dadicpu);
+
+    if(dadip > dadicpu) {
+      console.log("Il vincitore è il giocatore");
+    } else if (dadip == dadicpu) {
+      console.log("Nessun vincitore");
+    } else {
+      console.log("Il vincitore è il computer");
+    }
+    console.log("Refresha la pagina");
+    </script>
+  </body>
+</html>
